@@ -1,0 +1,31 @@
+<h1>Signup</h1>
+
+<%= form_for(@company, url: signup_path, method: :post) do |f| %>
+
+  <%= debug @company.errors.full_messages if @company.errors.present? %>
+
+  <h2>Company</h2>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <h2>User</h2>
+
+  <%= f.fields_for(:users) do |ff| %>
+    <div class="field">
+      <%= ff.label :name %>
+      <%= ff.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= ff.label :email %>
+      <%= ff.text_field :email %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

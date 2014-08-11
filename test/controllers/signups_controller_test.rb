@@ -5,8 +5,8 @@ require 'test_helper'
 class SignupsControllerTest < ActionController::TestCase
 
   def valid_params
-    { "company" => { "name" => "Night Market Life", "users_attributes" => [ { "name" => "Michael", "email" => "michael@example.com" } ] } }
-    # { "signup_form" => { "company_name" => "Night Market Life", "name" => "Michael", "email" => "michael@example.com" } }
+    # { "company" => { "name" => "Night Market Life", "users_attributes" => [ { "name" => "Michael", "email" => "michael@example.com" } ] } }
+    { "signup_form" => { "company_name" => "Night Market Life", "name" => "Michael", "email" => "michael@example.com" } }
   end
 
   test "should post create and redirect_to comapnay show" do
